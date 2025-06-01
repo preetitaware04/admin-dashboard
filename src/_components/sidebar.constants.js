@@ -20,6 +20,23 @@ export const sidebarMenu = [
     title: "Category",
     href: "categories/list",
     icon: <CategoryTwoTone size={20} />,
+    items: [
+      {
+        id: 1,
+        title: "Category List",
+        href: "categories/list",
+      },
+      {
+        id: 2,
+        title: "Add Category",
+        href: "categories/add",
+      },
+      {
+        id: 3,
+        title: "Edit Category",
+        href: "categories/edit",
+      },
+    ],
   },
   {
     id: 3,
@@ -43,13 +60,13 @@ export const sidebarMenu = [
     id: 6,
     title: "Mail",
     href: "mail/list",
-    icon: <MarkEmailUnreadTwoTone/>,
+    icon: <MarkEmailUnreadTwoTone />,
   },
 
   {
     id: 7,
     title: "Chat",
     href: "chat/list",
-    icon: <MarkChatUnreadTwoTone/>,
+    icon: <MarkChatUnreadTwoTone />,
   },
 ];

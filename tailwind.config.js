@@ -6,10 +6,10 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
+    extends: {
       colors: {
         dark: "#232A3C",
-        light: "#293245",
+        medium: "#293245",
       },
     },
   },
