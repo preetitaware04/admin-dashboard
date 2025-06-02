@@ -34,7 +34,7 @@ const Sidebar = () => {
                           >
                             <Button
                               variant="text"
-                              className="block !w-full !text-[13px] !capitalize hover:bg-gray-200 !text-left !justify-start !text-[#293245]"
+                              className="block !w-full !text-[13px] !capitalize hover:bg-gray-200 !text-left !justify-start !text-medium"
                             >
                               {item?.title}
                             </Button>
