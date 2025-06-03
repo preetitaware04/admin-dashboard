@@ -1,5 +1,6 @@
-import Sidebar from "@/_components/sidebar";
+import Sidebar from "@/_components/Sidebar";
 import "./globals.css";
+import Header from "@/_components/Header";
 
 export const metadata = {
   title: "Dashboard",
@@ -14,7 +15,10 @@ export default function RootLayout({ children }) {
           <div className="sidebar w-[18%] h-screen">
             <Sidebar />
           </div>
-          <div className="rightContent w-[82%]">{children}</div>
+          <div className="rightContent w-[82%]">
+            <Header />
+            <div className="p-3">{children}</div>
+          </div>
         </div>
       </body>
     </html>
