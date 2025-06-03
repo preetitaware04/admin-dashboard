@@ -1,25 +1,25 @@
-import {
-  CategoryTwoTone,
-  GridViewTwoTone,
-  MarkChatUnreadTwoTone,
-  MarkEmailUnreadTwoTone,
-  PeopleAltTwoTone,
-  ShoppingCartTwoTone,
-} from "@mui/icons-material";
-// import { RiProductHuntLine } from "react-icons/ri";
+import CategoryTwoToneIcon from "@mui/icons-material/CategoryTwoTone";
+import GridViewTwoToneIcon from "@mui/icons-material/GridViewTwoTone";
+import MarkChatUnreadTwoToneIcon from "@mui/icons-material/MarkChatUnreadTwoTone";
+import MarkEmailUnreadTwoToneIcon from "@mui/icons-material/MarkEmailUnreadTwoTone";
+import PeopleAltTwoToneIcon from "@mui/icons-material/PeopleAltTwoTone";
+import ShoppingCartTwoToneIcon from "@mui/icons-material/ShoppingCartTwoTone";
+
+import LogoutTwoToneIcon from "@mui/icons-material/LogoutTwoTone";
+import { RiProductHuntLine } from "react-icons/ri";
 
 export const sidebarMenu = [
   {
     id: 1,
     title: "Dashboard",
     href: "",
-    icon: <GridViewTwoTone size={20} />,
+    icon: <GridViewTwoToneIcon size={25} />,
   },
   {
     id: 2,
     title: "Category",
     href: "categories/list",
-    icon: <CategoryTwoTone size={20} />,
+    icon: <CategoryTwoToneIcon size={25} />,
     items: [
       {
         id: 1,
@@ -42,31 +42,54 @@ export const sidebarMenu = [
     id: 3,
     title: "Product",
     href: "products/list",
-    icon: <CategoryTwoTone size={20} />,
+    icon: <RiProductHuntLine size={25} />,
+    items: [
+      {
+        id: 1,
+        title: "Products List",
+        href: "products/list",
+      },
+      {
+        id: 2,
+        title: "Add Product",
+        href: "products/add",
+      },
+      {
+        id: 3,
+        title: "Edit Product",
+        href: "products/edit",
+      },
+    ],
   },
   {
     id: 4,
     title: "Customers",
     href: "customers/list",
-    icon: <PeopleAltTwoTone size={20} />,
+    icon: <PeopleAltTwoToneIcon size={25} />,
   },
   {
     id: 5,
     title: "Orders",
     href: "order/list",
-    icon: <ShoppingCartTwoTone size={20} />,
+    icon: <ShoppingCartTwoToneIcon size={25} />,
   },
   {
     id: 6,
     title: "Mail",
     href: "mail/list",
-    icon: <MarkEmailUnreadTwoTone />,
+    icon: <MarkEmailUnreadTwoToneIcon size={25} />,
   },
 
   {
     id: 7,
     title: "Chat",
     href: "chat/list",
-    icon: <MarkChatUnreadTwoTone />,
+    icon: <MarkChatUnreadTwoToneIcon size={25} />,
+  },
+  {
+    id: 8,
+    title: "LogOut",
+    href: "",
+    icon: <LogoutTwoToneIcon size={25} />,
   },
 ];
