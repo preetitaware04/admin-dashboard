@@ -21,7 +21,7 @@ const Sidebar = () => {
         <Image src="/next.svg" alt="logo" width={130} height={43} />
       </Link>
       <div className="sidebarMenu mt-4">
-        {sidebarMenu?.length !== 0 && (
+        {sidebarMenu?.length > 0 && (
           <ul className="w-full">
             {sidebarMenu?.map((menu, index) => {
               return (
@@ -29,8 +29,8 @@ const Sidebar = () => {
                   {menu?.items?.length > 0 ? (
                     <Button
                       variant="text"
-                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px] ${
-                        toggleIndex === index && isToggleSubmenu === true
+                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-gray-200 ${
+                        toggleIndex === index && isToggleSubmenu === false
                           ? "!bg-gray-200"
                           : ""
                       }`}
@@ -43,7 +43,11 @@ const Sidebar = () => {
                     <Link href={menu?.href}>
                       <Button
                         variant="text"
-                        className="w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px]"
+                        className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-red-200 ${
+                          toggleIndex === index && isToggleSubmenu === true
+                            ? "!bg-gray-200"
+                            : ""
+                        }`}
                         onClick={() => toggleTab(index)}
                       >
                         {menu?.icon}

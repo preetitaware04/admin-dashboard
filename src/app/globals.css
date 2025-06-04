@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 .light {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff !important;
+  --foreground: #171717 !important;
 }
 
 .dark {
-  --background: #171717;
-  --foreground: #c8c8c8;
+  --background: #171717 !important;
+  --foreground: #c8c8c8 !important;
 }
 
 .light ::-webkit-scrollbar {
