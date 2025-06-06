@@ -21,15 +21,15 @@ const Sidebar = () => {
         <Image src="/next.svg" alt="logo" width={130} height={43} />
       </Link>
       <div className="sidebarMenu mt-4">
-        {sidebarMenu?.length > 0 && (
+        {sidebarMenu?.length !== 0 && (
           <ul className="w-full">
             {sidebarMenu?.map((menu, index) => {
               return (
                 <div className="w-full relative group" key={menu?.id}>
-                  {menu?.items?.length > 0 ? (
+                  {menu?.items?.length !== 0  ? (
                     <Button
                       variant="text"
-                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-gray-200 ${
+                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-black gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-gray-200 ${
                         toggleIndex === index && isToggleSubmenu === false
                           ? "!bg-gray-200"
                           : ""
@@ -43,7 +43,7 @@ const Sidebar = () => {
                     <Link href={menu?.href}>
                       <Button
                         variant="text"
-                        className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-red-200 ${
+                        className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 !text-black gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-gray-200 ${
                           toggleIndex === index && isToggleSubmenu === true
                             ? "!bg-gray-200"
                             : ""
