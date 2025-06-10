@@ -1,10 +1,19 @@
 "use client";
-import { useState } from "react";
+import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
 
 const { MyContext } = require("./ThemeProvider");
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(null);
+
+  useEffect(() => {
+    const storedTheme = Cookies.get("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+      document.documentElement.classList.toggle("dark", storedTheme === "dark");
+    }
+  }, []);
   const values = {
     setTheme,
     theme,

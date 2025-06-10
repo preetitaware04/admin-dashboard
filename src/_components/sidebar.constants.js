@@ -12,13 +12,13 @@ export const sidebarMenu = [
   {
     id: 1,
     title: "Dashboard",
-    href: "",
+    href: "/",
     icon: <GridViewTwoToneIcon size={25} />,
   },
   {
     id: 2,
     title: "Category",
-    href: "categories/list",
+    href: "#",
     icon: <CategoryTwoToneIcon size={25} />,
     items: [
       {
@@ -41,7 +41,7 @@ export const sidebarMenu = [
   {
     id: 3,
     title: "Product",
-    href: "products/list",
+    href: "#",
     icon: <RiProductHuntLine size={25} />,
     items: [
       {
