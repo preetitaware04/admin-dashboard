@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
             </div>
             <div className="rightContent w-[82%]">
               <Header />
-              <div className="p-3">{children}</div>
+              <div className="pt-28">{children}</div>
             </div>
           </div>
         </ThemeProvider>
