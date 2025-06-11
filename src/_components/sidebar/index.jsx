@@ -76,7 +76,7 @@ const Sidebar = () => {
                             >
                               <Button
                                 variant="text"
-                                className="!w-full !text-[13px] !capitalize !hover:bg-gray-200 !text-left !justify-start !text-medium dark:!text-gray-200 gap-2 !pl-3"
+                                className="!w-full !text-[13px] !capitalize hover:!bg-gray-200 dark:hover:!bg-gray-800 !text-left !justify-start !text-medium dark:!text-gray-200 gap-2 !pl-3"
                               >
                                 <span className="w-[5px] h-[5px] rounded-full bg-gray-500"></span>
                                 {item?.title}

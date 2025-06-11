@@ -44,7 +44,7 @@ const Header = () => {
         </Button>
 
         <div className="flex items-center gap-2">
-          <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full flex items-center justify-center !bg-medium dark:!bg-gray-200 !text-white">
+          <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full flex items-center justify-center !bg-medium dark:!bg-gray-600 !text-white">
             R
           </Button>
         </div>
