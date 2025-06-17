@@ -18,18 +18,33 @@ const Dashboard = () => {
           modules={Navigation}
         >
           {cardsData &&
-            cardsData.map(({ id, title, count, icon, dataUsed, change }) => (
-              <SwiperSlide>
-                <DashboardCard
-                  key={id}
-                  title={title}
-                  count={count}
-                  icon={icon}
-                  dataUsed={dataUsed}
-                  change={change}
-                />
-              </SwiperSlide>
-            ))}
+            cardsData.map(
+              ({
+                id,
+                title,
+                count,
+                icon,
+                dataUsed,
+                changeCount,
+                status,
+                progress,
+                chartColor,
+              }) => (
+                <SwiperSlide>
+                  <DashboardCard
+                    key={id}
+                    title={title}
+                    count={count}
+                    icon={icon}
+                    dataUsed={dataUsed}
+                    changeCount={changeCount}
+                    status={status}
+                    progress={progress}
+                    chartColor={chartColor}
+                  />
+                </SwiperSlide>
+              )
+            )}
         </Swiper>
       </div>
     </section>
