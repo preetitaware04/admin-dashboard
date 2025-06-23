@@ -7,12 +7,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-const Dashboard = () => {
+const DashboardCards = () => {
   return (
-    <section className="px-5">
+    <section className="px-5"> 
       <div className="flex gap-4">
         <Swiper
-          spaceBetween={20}
+          spaceBetween={10}
           slidesPerView={4}
           scrollbar={{ draggable: true }}
           modules={Navigation}
@@ -51,4 +51,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default DashboardCards;

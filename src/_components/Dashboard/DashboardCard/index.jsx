@@ -55,21 +55,25 @@ const DashboardCard = ({
   progress,
   chartColor,
 }) => {
-  const demoUrl = "https://codesandbox.io/p/sandbox/tiny-bar-chart-xzyy8g";
   return (
-    <div className="px-5 py-4 my-5 shadow-md dark:shadow-slate-800 rounded-md w-full h-auto">
+    <div className="px-5 py-4 my-5 shadow-md dark:shadow-slate-800 rounded-md w-full h-auto bg-[#f3f4f6] dark:bg-slate-800">
       <div className="flex justify-between items-center gap-10 mb-5">
         <div className="flex gap-4 items-center">
           <div>{icon}</div>
           <div>
             <p>{title}</p>
-            <h4 className="bold">{count}</h4>
+            <h4 className="font-bold text-xl">{count}</h4>
           </div>
         </div>
         <div className="w-[70px] h-[70px]">
           <ResponsiveContainer>
             <BarChart width={150} height={40} data={data}>
-              <Bar dataKey="uv" fill={chartColor} barSize={5} />
+              <Bar
+                dataKey="uv"
+                fill={chartColor}
+                barSize={5}
+                radius={[10, 10, 0, 0]}
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
