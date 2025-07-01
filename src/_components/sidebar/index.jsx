@@ -32,14 +32,14 @@ const Sidebar = () => {
       </Link>
       <div className="sidebarMenu mt-4">
         {sidebarMenu?.length !== 0 && (
-          <ul className="w-full">
+          <ul className="w-full flex flex-col justify-center gap-2">
             {sidebarMenu?.map((menu, index) => {
               return (
                 <div className="w-full relative group" key={menu?.id}>
                   <Link href={menu?.href}>
                     <Button
                       variant="text"
-                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 dark:group-hover:!bg-gray-700 !text-medium gap-2 !font-[600] !text-[13px] !py-[10px] dark:!text-gray-200 ${
+                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 dark:group-hover:!bg-gray-700 !text-medium gap-5 !font-medium !text-xl !py-3 dark:!text-gray-200 ${
                         toggleIndex === index && isToggleSubmenu === true
                           ? "!bg-gray-200 dark:!bg-gray-700"
                           : ""
@@ -51,7 +51,7 @@ const Sidebar = () => {
                     </Button>
                   </Link>
                   {menu?.items?.length > 0 && (
-                    <Button className="!absolute !min-w-[30px] !w-[30px] !h-[30px] !rounded-full z-[50] !top-[5px] !right-[10px] flex items-center justify-center cursor-pointer !text-medium dark:!text-gray-200">
+                    <Button className="!absolute !min-w-[30px] !w-[30px] !h-[30px] !rounded-full z-[50] !top-[13px] !right-[10px] flex items-center justify-center cursor-pointer !text-medium dark:!text-gray-200">
                       <FaAngleDown
                         size={18}
                         className={`${
@@ -66,7 +66,7 @@ const Sidebar = () => {
                     <Collapse
                       isOpened={toggleIndex === index ? isToggleSubmenu : false}
                     >
-                      <div className="submenu w-full flex flex-col py-1">
+                      <div className="submenu w-full flex flex-col items-end py-1">
                         {menu?.items?.map((item, index) => {
                           return (
                             <Link
@@ -76,9 +76,9 @@ const Sidebar = () => {
                             >
                               <Button
                                 variant="text"
-                                className="!w-full !text-[13px] !capitalize hover:!bg-gray-200 dark:hover:!bg-gray-800 !text-left !justify-start !text-medium dark:!text-gray-200 gap-2 !pl-3"
+                                className="!text-xl !font-medium !capitalize hover:!bg-gray-200 dark:hover:!bg-gray-800 !text-left !text-medium dark:!text-gray-200 gap-4 !pl-10"
                               >
-                                <span className="w-[5px] h-[5px] rounded-full bg-gray-500"></span>
+                                <span className="w-[5px] h-[5px] bg-gray-500"></span>
                                 {item?.title}
                               </Button>
                             </Link>
