@@ -18,10 +18,18 @@ const Header = () => {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
+  const toggleNav = () => {
+    context?.setIsToggleSidebar(!context?.isToggleSidebar);
+  };
+
   return (
-    <header className="flex w-[82%] fixed top-0 right-0 z-100 px-4 py-2 justify-between shadow-md dark:shadow-slate-800">
+    <header className="flex w-full fixed top-0 right-0 z-40 px-4 py-2 justify-between shadow-md dark:shadow-slate-800 bg-white dark:bg-gray-800 transition-all duration-300">
+      {/* */}
       <div className="flex items-center gap-3">
-        <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700">
+        <Button
+          className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700"
+          onClick={toggleNav}
+        >
           <HiMenuAlt2 size={30} />
         </Button>
 
@@ -31,7 +39,7 @@ const Header = () => {
       <div className="flex items-center gap-3">
         <Button
           className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700 transition-all duration-300"
-          onClick={() => changeTheme()}
+          onClick={changeTheme}
         >
           {context.theme === "light" ? (
             <MdOutlineLightMode size={30} />

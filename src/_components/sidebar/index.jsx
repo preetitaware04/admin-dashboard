@@ -22,7 +22,7 @@ const Sidebar = () => {
     setIsToggleSubmenu(!isToggleSubmenu);
   };
   return (
-    <aside className="w-[18%] h-screen max-h-screen overflow-y-scroll overflow-x-hidden p-3 border border-r-[1px] border-[rgba(0,0,0,0.1)] fixed top-0 left-0">
+    <aside className="h-full w-full overflow-y-scroll overflow-x-hidden p-3 border border-r-[1px] border-[rgba(0,0,0,0.1)]">
       <Link href="/">
         {context.theme === "light" ? (
           <Image src={lightThemeLogo} alt="logo" width={180} height={30} />
@@ -51,7 +51,7 @@ const Sidebar = () => {
                     </Button>
                   </Link>
                   {menu?.items?.length > 0 && (
-                    <Button className="!absolute !min-w-[30px] !w-[30px] !h-[30px] !rounded-full z-[50] !top-[13px] !right-[10px] flex items-center justify-center cursor-pointer !text-medium dark:!text-gray-200">
+                    <Button className="!absolute !min-w-[30px] !w-[30px] !h-[30px] !rounded-full z-[30] !top-[13px] !right-[10px] flex items-center justify-center cursor-pointer !text-medium dark:!text-gray-200">
                       <FaAngleDown
                         size={18}
                         className={`${

@@ -12,17 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          <div className="main flex">
-            <div className="sidebar w-[18%] h-screen">
-              <Sidebar />
-            </div>
-            <div className="rightContent w-[82%]">
-              <Header />
-              <div className="pt-20">{children}</div>
-            </div>
-          </div>
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
