@@ -13,13 +13,23 @@ export const sidebarMenu = [
     id: 1,
     title: "Dashboard",
     href: "/",
-    icon: <GridViewTwoToneIcon size={35} />,
+    icon: (
+      <GridViewTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
   },
   {
     id: 2,
     title: "Category",
     href: "#",
-    icon: <CategoryTwoToneIcon size={35} />,
+    icon: (
+      <CategoryTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
     items: [
       {
         id: 1,
@@ -45,7 +55,12 @@ export const sidebarMenu = [
     id: 3,
     title: "Product",
     href: "#",
-    icon: <RiProductHuntLine size={30} />,
+    icon: (
+      <RiProductHuntLine
+        size={30}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
     items: [
       {
         id: 1,
@@ -72,21 +87,36 @@ export const sidebarMenu = [
     title: "Customers",
     // href: "customers/list",
     href: "#",
-    icon: <PeopleAltTwoToneIcon size={35} />,
+    icon: (
+      <PeopleAltTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
   },
   {
     id: 5,
     title: "Orders",
     // href: "order/list",
     href: "#",
-    icon: <ShoppingCartTwoToneIcon size={35} />,
+    icon: (
+      <ShoppingCartTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
   },
   {
     id: 6,
     title: "Mail",
     // href: "mail/list",
     href: "#",
-    icon: <MarkEmailUnreadTwoToneIcon size={35} />,
+    icon: (
+      <MarkEmailUnreadTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
   },
 
   {
@@ -94,12 +124,22 @@ export const sidebarMenu = [
     title: "Chat",
     // href: "chat/list",
     href: "#",
-    icon: <MarkChatUnreadTwoToneIcon size={35} />,
+    icon: (
+      <MarkChatUnreadTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
   },
   {
     id: 8,
     title: "LogOut",
     href: "#",
-    icon: <LogoutTwoToneIcon size={35} />,
+    icon: (
+      <LogoutTwoToneIcon
+        size={35}
+        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
+      />
+    ),
   },
 ];

@@ -4,12 +4,14 @@ import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { sidebarMenu } from "../sidebar.constants";
 import { Button } from "@mui/material";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
+import { FaAngleDown } from "react-icons/fa6";
 import { Collapse } from "react-collapse";
 import lightThemeLogo from "../../../public/assets/images/lightModelogo.png";
 import darkThemeLogo from "../../../public/assets/images/darkmodelogo.png";
+import { RxCross2 } from "react-icons/rx";
 
 import { MyContext } from "@/Context/ThemeProvider";
+import { HiMenuAlt2 } from "react-icons/hi";
 
 const Sidebar = () => {
   const [isToggleSubmenu, setIsToggleSubmenu] = useState(false);
@@ -21,15 +23,38 @@ const Sidebar = () => {
     setToggleIndex(index);
     setIsToggleSubmenu(!isToggleSubmenu);
   };
+
+  const toggleNav = () => {
+    context?.setIsToggleSidebar(!context?.isToggleSidebar);
+  };
   return (
-    <aside className="h-full w-full overflow-y-scroll overflow-x-hidden p-3 border border-r-[1px] border-[rgba(0,0,0,0.1)]">
-      <Link href="/">
-        {context.theme === "light" ? (
-          <Image src={lightThemeLogo} alt="logo" width={180} height={30} />
-        ) : (
-          <Image src={darkThemeLogo} alt="logo" width={180} height={30} />
-        )}
-      </Link>
+    <aside
+      className="h-screen max-h-screen overflow-y-scroll overflow-x-hidden p-3 border border-r-[1px] border-[rgba(0,0,0,0.1)] fixed top-0 left-0 transition-all duration-300 dark:!bg-[#171717]"
+      style={{ width: context.isToggleSidebar ? "4%" : "18%" }}
+    >
+      {context.isToggleSidebar ? (
+        <Button
+          className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700 transition-all duration-300 !mb-5"
+          onClick={toggleNav}
+        >
+          <HiMenuAlt2 size={30} />
+        </Button>
+      ) : (
+        <div className="flex justify-between items-end gap-3 !mb-5">
+          <Link href="/">
+            {context.theme === "light" ? (
+              <Image src={lightThemeLogo} alt="logo" width={180} height={30} />
+            ) : (
+              <Image src={darkThemeLogo} alt="logo" width={180} height={30} />
+            )}
+          </Link>
+          <RxCross2
+            onClick={toggleNav}
+            size={20}
+            className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200 transition-all duration-300 cursor-pointer"
+          />
+        </div>
+      )}
       <div className="sidebarMenu mt-4">
         {sidebarMenu?.length !== 0 && (
           <ul className="w-full flex flex-col justify-center gap-2">
@@ -51,7 +76,10 @@ const Sidebar = () => {
                     </Button>
                   </Link>
                   {menu?.items?.length > 0 && (
-                    <Button className="!absolute !min-w-[30px] !w-[30px] !h-[30px] !rounded-full z-[30] !top-[13px] !right-[10px] flex items-center justify-center cursor-pointer !text-medium dark:!text-gray-200">
+                    <Button
+                      className={`!absolute !min-w-[30px] !w-[30px] !h-[30px] !rounded-full z-[30] !top-[13px] !right-[10px] flex items-center justify-center cursor-pointer !text-medium dark:!text-gray-200`}
+                      style={{ display: context.isToggleSidebar ? "none" : "" }}
+                    >
                       <FaAngleDown
                         size={18}
                         className={`${
