@@ -1,6 +1,4 @@
-import Sidebar from "@/_components/Sidebar";
 import "./globals.css";
-import Header from "@/_components/Header";
 import ThemeProvider from "@/Context/ThemeContext";
 
 export const metadata = {
