@@ -1,101 +1,77 @@
 "use client";
-import { Button } from "@mui/material";
-import React from "react";
-// import {
-//   RadialBarChart,
-//   RadialBar,
-//   Legend,
-//   ResponsiveContainer,
-// } from "recharts";
-
-// const promotionalSalesData = [
-//   {
-//     name: "18-24",
-//     uv: 31.47,
-//     pv: 2400,
-//     fill: "#8884d8",
-//   },
-//   {
-//     name: "25-29",
-//     uv: 26.69,
-//     pv: 4567,
-//     fill: "#83a6ed",
-//   },
-//   {
-//     name: "30-34",
-//     uv: 15.69,
-//     pv: 1398,
-//     fill: "#8dd1e1",
-//   },
-//   {
-//     name: "35-39",
-//     uv: 8.22,
-//     pv: 9800,
-//     fill: "#82ca9d",
-//   },
-//   {
-//     name: "40-49",
-//     uv: 8.63,
-//     pv: 3908,
-//     fill: "#a4de6c",
-//   },
-//   {
-//     name: "50+",
-//     uv: 2.63,
-//     pv: 4800,
-//     fill: "#d0ed57",
-//   },
-//   {
-//     name: "unknow",
-//     uv: 6.67,
-//     pv: 4800,
-//     fill: "#ffc658",
-//   },
-// ];
-
-// const style = {
-//   top: "50%",
-//   right: 0,
-//   transform: "translate(0, -50%)",
-//   lineHeight: "24px",
-// };
+import React, { useState } from "react";
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import { MdOutlineShoppingCart } from "react-icons/md";
+import { IoStorefrontOutline } from "react-icons/io5";
+import { TbSocial } from "react-icons/tb";
 
 const ChannelRevenue = () => {
+  const [revenue, setRevenue] = useState("Monthly");
+
+  const handleChangeRevenue = (event) => {
+    setRevenue(event.target.value);
+  };
   return (
-    <div className="p-5 shadow-md rounded-md">
+    <div className="p-5 w-[40%] shadow-md rounded-md flex flex-col gap-5">
       <div className="flex justify-between items-start">
         <div>
           <h2 className="text-[22px] font-bold">Channel Revenue</h2>
         </div>
-        <Button variant="outlined" className="!capitalize" size="small">
-          Details
-        </Button>
+        <Select
+          value={revenue}
+          onChange={handleChangeRevenue}
+          displayEmpty
+          inputProps={{ "aria-label": "Without label" }}
+          size="small"
+        >
+          <MenuItem value={"Monthly"}>Monthly</MenuItem>
+          <MenuItem value={"Weekly"}>Weekly</MenuItem>
+          <MenuItem value={"Annualy"}>Annualy</MenuItem>
+        </Select>
       </div>
-      <div className="w-[250px] h-[250px]">
-        {/* <ResponsiveContainer width="100%" height="100%">
-          <RadialBarChart
-            cx="50%"
-            cy="50%"
-            innerRadius="10%"
-            outerRadius="80%"
-            barSize={10}
-            data={promotionalSalesData}
-          >
-            <RadialBar
-              minAngle={15}
-              label={{ position: "insideStart", fill: "#fff" }}
-              background
-              clockWise
-              dataKey="uv"
-            />
-            <Legend
-              iconSize={10}
-              layout="vertical"
-              verticalAlign="middle"
-              wrapperStyle={style}
-            />
-          </RadialBarChart>
-        </ResponsiveContainer> */}
+      <h3 className="flex items-center gap-2">
+        <span className="text-[35px] font-bold">3.4%</span>
+        <span>Growth Rate</span>
+      </h3>
+
+      <div className="grid grid-cols-3 gap-3 mt-5">
+        <div className="flex flex-col">
+          <span className="flex w-full h-[5px] rounded-full bg-blue-300"></span>
+          <span className="font-semibold">28%</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="flex w-full h-[5px] rounded-full bg-green-200"></span>
+          <span className="font-semibold">32%</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="flex w-full h-[5px] rounded-full bg-orange-200"></span>
+          <span className="font-semibold">40%</span>
+        </div>
+      </div>
+
+      <div className="rounded-md bg-gray-200 p-4 w-full mt-3 grid grid-cols-3">
+        <div className="flex items-center justify-center flex-col">
+          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-blue-300">
+            <MdOutlineShoppingCart size={30} />
+          </span>
+          <h3 className="text-lg font-semibold mt-1">$2.9K</h3>
+          <p className="text-[14px]">Online store</p>
+        </div>
+        <div className="flex items-center justify-center flex-col">
+          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-green-200">
+            <IoStorefrontOutline size={30} />
+          </span>
+          <h3 className="text-lg font-semibold mt-1">$2.6K</h3>
+          <p className="text-[14px]">Physical store</p>
+        </div>
+        <div className="flex items-center justify-center flex-col">
+          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-orange-200">
+            <TbSocial size={30} />
+          </span>
+          <h3 className="text-lg font-semibold mt-1">$2.1K</h3>
+          <p className="text-[14px]">Social media</p>
+        </div>
       </div>
     </div>
   );
