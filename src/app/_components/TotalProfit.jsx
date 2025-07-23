@@ -1,12 +1,20 @@
 "use client";
-import { profitData } from "@/_components/Dashboard/dashboard.constants";
+import {
+  profitData,
+  profitTabsData,
+} from "@/_components/Dashboard/dashboard.constants";
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
 
 const TotalProfit = () => {
+  const [selectedProfit, setSelectedProfit] = useState(0);
+
+  const handleSelectProfit = (index) => {
+    setSelectedProfit(index);
+  };
   return (
-    <div className="p-5 w-[60%] shadow-md rounded-md flex flex-col justify-between">
+    <div className="card dark:border-gray-700 p-5 w-[60%] shadow-md dark:shadow-gray-700 rounded-md flex flex-col justify-between">
       <div className="flex justify-between items-start">
         <div>
           <h2 className="text-lg">TotalProfit</h2>
@@ -16,6 +24,25 @@ const TotalProfit = () => {
           Details
         </Button>
       </div>
+
+      <div className="my-3 w-full rounded-xl card dark:border-gray-700 py-2 flex items-center gap-8 justify-between px-4">
+        {profitTabsData?.map((tab, index) => {
+          return (
+            <span
+              key={index}
+              className={`flex items-center justify-center p-2 px-4 rounded-md text-sm cursor-pointer w-full ${
+                selectedProfit === index
+                  ? "bg-[#f3f4f6] dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-800"
+                  : ""
+              }`}
+              onClick={() => handleSelectProfit(index)}
+            >
+              {tab?.tabName}
+            </span>
+          );
+        })}
+      </div>
+
       <div className="w-full h-[250px]">
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart width={500} height={400} data={profitData}>

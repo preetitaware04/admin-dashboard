@@ -1,4 +1,9 @@
-import { PiGiftBold, PiChartPieSliceBold, PiBankBold, PiUsersBold   } from "react-icons/pi";
+import {
+  PiGiftBold,
+  PiChartPieSliceBold,
+  PiBankBold,
+  PiUsersBold,
+} from "react-icons/pi";
 
 export const cardsData = [
   {
@@ -96,4 +101,12 @@ export const profitData = [
     pv: 4300,
     amt: 2100,
   },
+];
+
+export const profitTabsData = [
+  { id: 1, tabName: "5D" },
+  { id: 2, tabName: "2W" },
+  { id: 3, tabName: "1M" },
+  { id: 4, tabName: "6M" },
+  { id: 5, tabName: "1Y" },
 ];

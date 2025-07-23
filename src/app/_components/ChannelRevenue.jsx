@@ -13,7 +13,7 @@ const ChannelRevenue = () => {
     setRevenue(event.target.value);
   };
   return (
-    <div className="p-5 w-[40%] shadow-md rounded-md flex flex-col gap-5">
+    <div className="card dark:border-gray-700 p-5 w-[40%] shadow-md dark:shadow-gray-700 rounded-md flex flex-col gap-5">
       <div className="flex justify-between items-start">
         <div>
           <h2 className="text-[22px] font-bold">Channel Revenue</h2>
@@ -23,6 +23,7 @@ const ChannelRevenue = () => {
           onChange={handleChangeRevenue}
           displayEmpty
           inputProps={{ "aria-label": "Without label" }}
+          className="!text-black dark:!text-gray-200 !border dark:!border-gray-700 !outline-none"
           size="small"
         >
           <MenuItem value={"Monthly"}>Monthly</MenuItem>
@@ -50,23 +51,23 @@ const ChannelRevenue = () => {
         </div>
       </div>
 
-      <div className="rounded-md bg-gray-200 p-4 w-full mt-3 grid grid-cols-3">
+      <div className="rounded-md bg-[#f3f4f6] shadow-md dark:bg-gray-800 p-4 w-full mt-3 grid grid-cols-3">
         <div className="flex items-center justify-center flex-col">
-          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-blue-300">
+          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-blue-300 text-black">
             <MdOutlineShoppingCart size={30} />
           </span>
           <h3 className="text-lg font-semibold mt-1">$2.9K</h3>
           <p className="text-[14px]">Online store</p>
         </div>
         <div className="flex items-center justify-center flex-col">
-          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-green-200">
+          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-green-200 text-black">
             <IoStorefrontOutline size={30} />
           </span>
           <h3 className="text-lg font-semibold mt-1">$2.6K</h3>
           <p className="text-[14px]">Physical store</p>
         </div>
         <div className="flex items-center justify-center flex-col">
-          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-orange-200">
+          <span className="flex items-center justify-center w-[60px] h-[60px] rounded-full bg-orange-200 text-black">
             <TbSocial size={30} />
           </span>
           <h3 className="text-lg font-semibold mt-1">$2.1K</h3>

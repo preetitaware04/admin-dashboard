@@ -29,7 +29,7 @@ const ThemeProvider = ({ children }) => {
       <div className="main flex">
         <div
           className={`h-screen bg-white dark:bg-gray-800 transition-all duration-300`}
-          style={{ width: isToggleSidebar ? "6%" : "18%" }}
+          style={{ width: isToggleSidebar ? "4%" : "18%" }}
         >
           <Sidebar />
         </div>
