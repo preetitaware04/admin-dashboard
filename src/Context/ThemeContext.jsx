@@ -41,7 +41,7 @@ const ThemeProvider = ({ children }) => {
           className="transition-all duration-300"
         >
           <Header />
-          <div className="px-5 py-20">{children}</div>
+          <div className="px-10 py-20 relative right-0">{children}</div>
         </div>
       </div>
     </MyContext.Provider>
