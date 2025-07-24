@@ -16,7 +16,7 @@ const ChannelRevenue = () => {
     <div className="card dark:border-gray-700 p-5 w-[40%] shadow-md dark:shadow-gray-700 rounded-md flex flex-col gap-5">
       <div className="flex justify-between items-start">
         <div>
-          <h2 className="text-[22px] font-bold">Channel Revenue</h2>
+          <h2 className="text-xl font-bold">Channel Revenue</h2>
         </div>
         <Select
           value={revenue}

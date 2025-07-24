@@ -18,9 +18,9 @@ const Header = () => {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
-  const toggleNav = () => {
-    context?.setIsToggleSidebar(!context?.isToggleSidebar);
-  };
+  // const toggleNav = () => {
+  //   context?.setIsToggleSidebar(!context?.isToggleSidebar);
+  // };
 
   return (
     <header

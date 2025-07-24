@@ -17,7 +17,7 @@ const TotalProfit = () => {
     <div className="card dark:border-gray-700 p-5 w-[60%] shadow-md dark:shadow-gray-700 rounded-md flex flex-col justify-between">
       <div className="flex justify-between items-start">
         <div>
-          <h2 className="text-lg">TotalProfit</h2>
+          <h2 className="text-xl">TotalProfit</h2>
           <span className="text-[25px] font-bold">$8,950.00</span>
         </div>
         <Button variant="outlined" className="!capitalize" size="small">
@@ -32,8 +32,8 @@ const TotalProfit = () => {
               key={index}
               className={`flex items-center justify-center p-2 px-4 rounded-md text-sm cursor-pointer w-full ${
                 selectedProfit === index
-                  ? "bg-[#f3f4f6] dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-800"
-                  : ""
+                  ? "bg-[#f3f4f6] dark:bg-gray-800 shadow-lg border border-gray-100 dark:border-gray-800 font-bold"
+                  : " font-medium"
               }`}
               onClick={() => handleSelectProfit(index)}
             >
