@@ -26,7 +26,7 @@ const Header = () => {
     <header
       className="flex fixed top-0 right-0 z-[100] px-4 py-2 justify-between shadow-md dark:shadow-slate-800 bg-white dark:!bg-[#171717] transition-all duration-300"
       style={{
-        width: context.isToggleSidebar ? "96%" : "82%",
+        width: context.isToggleSidebar ? "94%" : "82%",
       }} 
     >
       <div className="flex items-center gap-3">

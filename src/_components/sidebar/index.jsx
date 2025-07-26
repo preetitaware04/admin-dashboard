@@ -30,7 +30,7 @@ const Sidebar = () => {
   return (
     <aside
       className="h-screen max-h-screen overflow-y-scroll overflow-x-hidden p-3 border border-r-[1px] border-[rgba(0,0,0,0.1)] fixed top-0 left-0 transition-all duration-300 dark:!bg-[#171717]"
-      style={{ width: context.isToggleSidebar ? "4%" : "18%" }}
+      style={{ width: context.isToggleSidebar ? "6%" : "18%" }}
     >
       {context.isToggleSidebar ? (
         <Button
