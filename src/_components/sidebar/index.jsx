@@ -28,34 +28,50 @@ const Sidebar = () => {
     context?.setIsToggleSidebar(!context?.isToggleSidebar);
   };
   return (
-    <aside
-      className="h-screen max-h-screen overflow-y-scroll overflow-x-hidden p-3 border border-r-[1px] border-[rgba(0,0,0,0.1)] fixed top-0 left-0 transition-all duration-300 dark:!bg-[#171717]"
-      style={{ width: context.isToggleSidebar ? "6%" : "18%" }}
+    <section
+      className={`h-screen bg-white max-h-screen overflow-y-scroll overflow-x-hidden py-5 border border-r-[1px] border-[rgba(0,0,0,0.1)] fixed top-0 left-0 transition-all duration-300 dark:!bg-[#171717] z-50`}
+      style={{ width: context.isToggleSidebar ? "70px" : "280px" }}
     >
-      {context.isToggleSidebar ? (
-        <Button
-          className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700 transition-all duration-300 !mb-5"
-          onClick={toggleNav}
-        >
-          <HiMenuAlt2 size={30} />
-        </Button>
-      ) : (
-        <div className="flex justify-between items-end gap-3 !mb-5">
-          <Link href="/">
-            {context.theme === "light" ? (
-              <Image src={lightThemeLogo} alt="logo" width={180} height={30} />
-            ) : (
-              <Image src={darkThemeLogo} alt="logo" width={180} height={30} />
-            )}
-          </Link>
-          <RxCross2
+      <div className="h-[60px]">
+        {context.isToggleSidebar ? (
+          <Button
+            className={`!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700 transition-all duration-300 ${
+              context.isToggleSidebar ? "!ml-1" : ""
+            }`}
             onClick={toggleNav}
-            size={20}
-            className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200 transition-all duration-300 cursor-pointer"
-          />
-        </div>
-      )}
-      <div className="sidebarMenu mt-4">
+          >
+            <HiMenuAlt2 size={30} />
+          </Button>
+        ) : (
+          <div className="flex justify-between items-end gap-3">
+            <Link href="/">
+              {context.theme === "light" ? (
+                <Image
+                  src={lightThemeLogo}
+                  alt="logo"
+                  width={180}
+                  height={30}
+                  className="!h-[40px]"
+                />
+              ) : (
+                <Image
+                  src={darkThemeLogo}
+                  alt="logo"
+                  width={180}
+                  height={30}
+                  className="!h-[40px]"
+                />
+              )}
+            </Link>
+            <RxCross2
+              onClick={toggleNav}
+              size={20}
+              className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200 transition-all duration-300 cursor-pointer"
+            />
+          </div>
+        )}
+      </div>
+      <div className="sidebarMenu">
         {sidebarMenu?.length !== 0 && (
           <ul className="w-full flex flex-col justify-center gap-2">
             {sidebarMenu?.map((menu, index) => {
@@ -64,7 +80,9 @@ const Sidebar = () => {
                   <Link href={menu?.href}>
                     <Button
                       variant="text"
-                      className={`w-full !capitalize text-left !justify-start group-hover:!bg-gray-200 dark:group-hover:!bg-gray-700 !text-medium gap-5 !font-medium !text-xl !py-3 dark:!text-gray-200 ${
+                      className={`!w-full !capitalize !justify-start group-hover:!bg-gray-200 dark:group-hover:!bg-gray-700 !text-medium gap-5 !font-medium !text-xl !py-3 dark:!text-gray-200 ${
+                        context.isToggleSidebar ? "!ml-1" : ""
+                      } ${
                         toggleIndex === index && isToggleSubmenu === true
                           ? "!bg-gray-200 dark:!bg-gray-700"
                           : ""
@@ -121,7 +139,7 @@ const Sidebar = () => {
           </ul>
         )}
       </div>
-    </aside>
+    </section>
   );
 };
 

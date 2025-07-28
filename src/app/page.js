@@ -6,14 +6,14 @@ import SalesReport from "./_components/SalesReport";
 
 export default function Home() {
   return (
-    <>
+    <div className="px-4 py-6 card shadow-md">
       <Banner />
       <DashboardCards />
-      <section className="flex gap-4 my-4 px-5">
+      <section className="flex gap-4 my-4">
         <TotalProfit />
         <ChannelRevenue />
       </section>
       <SalesReport/>
-    </>
+    </div>
   );
 }

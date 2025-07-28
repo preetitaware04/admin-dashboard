@@ -5,7 +5,7 @@ import BannerImg from "../../../public/assets/images/bannerImg.png";
 import Image from "next/image";
 const Banner = () => {
   return (
-    <section className="px-5 mt-20">
+    <section>
       <div className="card px-5 py-10 flex justify-between gap-5 shadow-lg rounded-md dark:border-slate-950 dark:shadow-slate-950">
         <div className="flex flex-col gap-5 items-start justify-center">
           <h1 className="max-w-xl w-full font-bold text-4xl">

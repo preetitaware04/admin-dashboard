@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/_components/Header";
-import Sidebar from "@/_components/sidebar";
+import Sidebar from "@/_components/Sidebar";
 import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 
@@ -27,21 +27,21 @@ const ThemeProvider = ({ children }) => {
   return (
     <MyContext.Provider value={values}>
       <div className="main flex">
-        <div
-          className={`h-screen bg-white dark:bg-gray-800 transition-all duration-300`}
-          style={{ width: isToggleSidebar ? "6%" : "18%" }}
-        >
-          <Sidebar />
-        </div>
+        <Sidebar />
 
         <div
-          style={{
-            width: isToggleSidebar ? "95%" : "82%",
+          className={`w-full flex-1 transition-all duration-300 ${
+            isToggleSidebar
+              ? "bg-black/40 backdrop-blur-sm"
+              : "bg-black/40 backdrop-blur-sm"
+          }`}
+          style={{ marginLeft: "70px" }}
+          onClick={() => {
+            if (!isToggleSidebar) setIsToggleSidebar(true);
           }}
-          className="transition-all duration-300"
         >
           <Header />
-          <div className="px-10 py-20 relative right-0">{children}</div>
+          <div className="px-4 py-10 relative right-0">{children}</div>
         </div>
       </div>
     </MyContext.Provider>

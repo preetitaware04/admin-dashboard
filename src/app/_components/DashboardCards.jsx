@@ -10,14 +10,15 @@ import { Navigation } from "swiper/modules";
 const DashboardCards = () => {
   const swiperRef = useRef(null);
   return (
-    <section className="px-5">
-      <div className="flex gap-4 shrink-0">
+    <section>
+      <div className="flex gap-4 justify-between">
         <Swiper
           ref={swiperRef}
-          spaceBetween={10}
+          spaceBetween={20}
           slidesPerView="auto"
           scrollbar={{ draggable: true }}
           modules={[Navigation]}
+          className="!mx-0"
         >
           {cardsData &&
             cardsData.map(

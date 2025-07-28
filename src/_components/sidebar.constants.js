@@ -14,10 +14,7 @@ export const sidebarMenu = [
     title: "Dashboard",
     href: "/",
     icon: (
-      <GridViewTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <GridViewTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
   },
   {
@@ -25,10 +22,7 @@ export const sidebarMenu = [
     title: "Category",
     href: "#",
     icon: (
-      <CategoryTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <CategoryTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
     items: [
       {
@@ -56,10 +50,7 @@ export const sidebarMenu = [
     title: "Product",
     href: "#",
     icon: (
-      <RiProductHuntLine
-        size={30}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <RiProductHuntLine className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
     items: [
       {
@@ -88,10 +79,7 @@ export const sidebarMenu = [
     // href: "customers/list",
     href: "#",
     icon: (
-      <PeopleAltTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <PeopleAltTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
   },
   {
@@ -100,10 +88,7 @@ export const sidebarMenu = [
     // href: "order/list",
     href: "#",
     icon: (
-      <ShoppingCartTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <ShoppingCartTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
   },
   {
@@ -112,10 +97,7 @@ export const sidebarMenu = [
     // href: "mail/list",
     href: "#",
     icon: (
-      <MarkEmailUnreadTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <MarkEmailUnreadTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
   },
 
@@ -125,10 +107,7 @@ export const sidebarMenu = [
     // href: "chat/list",
     href: "#",
     icon: (
-      <MarkChatUnreadTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <MarkChatUnreadTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
   },
   {
@@ -136,10 +115,7 @@ export const sidebarMenu = [
     title: "LogOut",
     href: "#",
     icon: (
-      <LogoutTwoToneIcon
-        size={35}
-        className="!min-w-[30px] !w-[30px] !h-[30px] !rounded-full !text-medium dark:!text-gray-200"
-      />
+      <LogoutTwoToneIcon className="!min-w-[28px] !w-[28px] !h-[28px] !text-medium dark:!text-gray-200" />
     ),
   },
 ];
