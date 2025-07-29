@@ -29,7 +29,7 @@ const Sidebar = () => {
   };
   return (
     <section
-      className={`h-screen bg-white max-h-screen overflow-y-scroll overflow-x-hidden py-5 border border-r-[1px] border-[rgba(0,0,0,0.1)] fixed top-0 left-0 transition-all duration-300 dark:!bg-[#171717] z-50`}
+      className={`fixed top-0 left-0 h-screen bg-white max-h-screen overflow-y-scroll overflow-x-hidden py-5 border border-r-[1px] border-[rgba(0,0,0,0.1)] transition-all duration-300 dark:!bg-[#171717] z-50`}
       style={{ width: context.isToggleSidebar ? "70px" : "280px" }}
     >
       <div className="h-[60px]">

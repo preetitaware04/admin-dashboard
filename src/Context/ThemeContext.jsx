@@ -26,22 +26,22 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <MyContext.Provider value={values}>
-      <div className="main flex">
+      <div className="relative flex">
         <Sidebar />
 
+        {/* Overlay (shown only when sidebar is open) */}
+        {isToggleSidebar && (
+          <div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-10"
+            onClick={() => setIsToggleSidebar(false)}
+          ></div>
+        )}
         <div
-          className={`w-full flex-1 transition-all duration-300 ${
-            isToggleSidebar
-              ? "bg-black/40 backdrop-blur-sm"
-              : "bg-black/40 backdrop-blur-sm"
-          }`}
+          className={`w-full flex-1 relative transition-all duration-300 z-20`}
           style={{ marginLeft: "70px" }}
-          onClick={() => {
-            if (!isToggleSidebar) setIsToggleSidebar(true);
-          }}
         >
           <Header />
-          <div className="px-4 py-10 relative right-0">{children}</div>
+          <div className="px-4 py-10">{children}</div>
         </div>
       </div>
     </MyContext.Provider>
