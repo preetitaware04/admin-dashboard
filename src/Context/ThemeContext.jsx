@@ -30,14 +30,18 @@ const ThemeProvider = ({ children }) => {
         <Sidebar />
 
         {/* Overlay (shown only when sidebar is open) */}
-        {isToggleSidebar && (
+        {!isToggleSidebar && (
           <div
-            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-10"
-            onClick={() => setIsToggleSidebar(false)}
+            className="fixed inset-0 bg-black/10 backdrop-blur-sm z-20"
+            onClick={() => setIsToggleSidebar(true)} 
           ></div>
         )}
         <div
-          className={`w-full flex-1 relative transition-all duration-300 z-20`}
+          className={`w-full flex-1 relative transition-all duration-300 z-10 ${
+            !isToggleSidebar
+              ? "pointer-events-none select-none"
+              : "pointer-events-auto"
+          }`}
           style={{ marginLeft: "70px" }}
         >
           <Header />

@@ -20,12 +20,16 @@ const Sidebar = () => {
   const context = useContext(MyContext);
 
   const toggleTab = (index) => {
-    setToggleIndex(index);
-    setIsToggleSubmenu(!isToggleSubmenu);
+    if (!context.isToggleSidebar) {
+      setToggleIndex(index);
+      setIsToggleSubmenu(!isToggleSubmenu);
+    }
   };
 
   const toggleNav = () => {
     context?.setIsToggleSidebar(!context?.isToggleSidebar);
+    setIsToggleSubmenu(!isToggleSubmenu);
+    setToggleIndex(null);
   };
   return (
     <section
