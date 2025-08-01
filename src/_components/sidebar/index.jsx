@@ -13,24 +13,16 @@ import { RxCross2 } from "react-icons/rx";
 import { MyContext } from "@/Context/ThemeProvider";
 import { HiMenuAlt2 } from "react-icons/hi";
 
-const Sidebar = () => {
-  const [isToggleSubmenu, setIsToggleSubmenu] = useState(false);
-  const [toggleIndex, setToggleIndex] = useState(null);
-
+const Sidebar = ({ toggleNav }) => {
   const context = useContext(MyContext);
 
   const toggleTab = (index) => {
     if (!context.isToggleSidebar) {
-      setToggleIndex(index);
-      setIsToggleSubmenu(!isToggleSubmenu);
+      context.setToggleIndex(index);
+      context.setIsToggleSubmenu(!context.isToggleSubmenu);
     }
   };
 
-  const toggleNav = () => {
-    context?.setIsToggleSidebar(!context?.isToggleSidebar);
-    setIsToggleSubmenu(!isToggleSubmenu);
-    setToggleIndex(null);
-  };
   return (
     <section
       className={`fixed top-0 left-0 h-screen bg-white max-h-screen overflow-y-scroll overflow-x-hidden py-5 border border-r-[1px] border-[rgba(0,0,0,0.1)] transition-all duration-300 dark:!bg-[#171717] z-50`}
@@ -87,14 +79,20 @@ const Sidebar = () => {
                       className={`!w-full !capitalize !justify-start group-hover:!bg-gray-200 dark:group-hover:!bg-gray-700 !text-medium gap-5 !font-medium !text-xl !py-3 dark:!text-gray-200 ${
                         context.isToggleSidebar ? "!ml-1" : ""
                       } ${
-                        toggleIndex === index && isToggleSubmenu === true
+                        context.toggleIndex === index &&
+                        context.isToggleSubmenu === true
                           ? "!bg-gray-200 dark:!bg-gray-700"
                           : ""
                       }`}
-                      onClick={() => toggleTab(index)}
+                      onClick={(e) => {
+                        if (menu?.items?.length > 0) {
+                          e.preventDefault();
+                          toggleTab(index);
+                        }
+                      }}
                     >
                       {menu?.icon}
-                      {`${menu?.title}`}
+                      {!context.isToggleSidebar && `${menu?.title}`}
                     </Button>
                   </Link>
                   {menu?.items?.length > 0 && (
@@ -105,7 +103,8 @@ const Sidebar = () => {
                       <FaAngleDown
                         size={18}
                         className={`${
-                          toggleIndex === index && isToggleSubmenu === true
+                          context.toggleIndex === index &&
+                          context.isToggleSubmenu === true
                             ? "rotate-180"
                             : ""
                         }`}
@@ -114,7 +113,11 @@ const Sidebar = () => {
                   )}
                   {menu?.items?.length > 0 && (
                     <Collapse
-                      isOpened={toggleIndex === index ? isToggleSubmenu : false}
+                      isOpened={
+                        context.toggleIndex === index
+                          ? context.isToggleSubmenu
+                          : false
+                      }
                     >
                       <div className="submenu w-full flex flex-col items-end py-1">
                         {menu?.items?.map((item, index) => {

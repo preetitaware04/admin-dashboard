@@ -9,6 +9,8 @@ const { MyContext } = require("./ThemeProvider");
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(null);
   const [isToggleSidebar, setIsToggleSidebar] = useState(true);
+  const [isToggleSubmenu, setIsToggleSubmenu] = useState(false);
+  const [toggleIndex, setToggleIndex] = useState(null);
 
   useEffect(() => {
     const storedTheme = Cookies.get("theme");
@@ -17,23 +19,34 @@ const ThemeProvider = ({ children }) => {
       document.documentElement.classList.toggle("dark", storedTheme === "dark");
     }
   }, []);
+
+  const toggleNav = () => {
+    setIsToggleSidebar(!isToggleSidebar);
+
+    setIsToggleSubmenu(!isToggleSubmenu);
+    setToggleIndex(null);
+  };
   const values = {
     theme,
     isToggleSidebar,
+    isToggleSubmenu,
+    toggleIndex,
     setTheme,
     setIsToggleSidebar,
+    setIsToggleSubmenu,
+    setToggleIndex,
   };
 
   return (
     <MyContext.Provider value={values}>
       <div className="relative flex">
-        <Sidebar />
+        <Sidebar toggleNav={toggleNav} />
 
         {/* Overlay (shown only when sidebar is open) */}
         {!isToggleSidebar && (
           <div
             className="fixed inset-0 bg-black/10 backdrop-blur-sm z-20"
-            onClick={() => setIsToggleSidebar(true)} 
+            onClick={toggleNav}
           ></div>
         )}
         <div
