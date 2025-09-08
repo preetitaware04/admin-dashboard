@@ -156,3 +156,66 @@ export const barChartData = [
     amt: 2100,
   },
 ];
+
+export const salesReportData = [
+  {
+    name: "Jan",
+    revenue: 5000,
+    expense: 1500,
+  },
+  {
+    name: "Feb",
+    revenue: 7500,
+    expense: 3500,
+  },
+  {
+    name: "Mar",
+    revenue: 4500,
+    expense: 2700,
+  },
+  {
+    name: "Apr",
+    revenue: 2754,
+    expense: 4859,
+  },
+  {
+    name: "May",
+    revenue: 6574,
+    expense: 9574,
+  },
+  {
+    name: "Jun",
+    revenue: 7485,
+    expense: 4758,
+  },
+  {
+    name: "Jul",
+    revenue: 2458,
+    expense: 3574,
+  },
+  {
+    name: "Aug",
+    revenue: 4758,
+    expense: 6452,
+  },
+  {
+    name: "Sep",
+    revenue: 7485,
+    expense: 2545,
+  },
+  {
+    name: "Oct",
+    revenue: 1745,
+    expense: 1500,
+  },
+  {
+    name: "Nov",
+    revenue: 7485,
+    expense: 4759,
+  },
+  {
+    name: "Dec",
+    revenue: 4156,
+    expense: 3585,
+  },
+];
