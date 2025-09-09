@@ -10,8 +10,8 @@ import { Navigation } from "swiper/modules";
 const DashboardCards = () => {
   const swiperRef = useRef(null);
   return (
-    <section>
-      <div className="flex gap-4 justify-between">
+    <section className="my-4">
+      <div className="card dark:border-gray-700 p-5 px-5 shadow-md dark:shadow-gray-700 rounded-md flex gap-4 justify-between">
         <Swiper
           ref={swiperRef}
           spaceBetween={20}

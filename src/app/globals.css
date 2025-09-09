@@ -47,3 +47,17 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+
+.dark .MuiSelect-root {
+  color: #fff !important;
+}
+.dark .MuiSelect-root fieldset {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+.dark .MuiPaper-elevation {
+  background-color: #25252a !important;
+}
+.dark .MuiPaper-elevation *{
+  color:rgba(255, 255, 255, 0.8) !important;
+}
+
