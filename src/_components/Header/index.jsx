@@ -18,52 +18,34 @@ const Header = () => {
     document.documentElement.classList.toggle("dark", newTheme === "dark");
   };
 
-  // const toggleNav = () => {
-  //   context?.setIsToggleSidebar(!context?.isToggleSidebar);
-  // };
-
   return (
-    
-      <div
-        className="flex z-[100] px-4 py-2 justify-between shadow-md dark:shadow-slate-800 bg-white dark:!bg-[#171717] transition-all duration-300"
-        // style={{
-        //   width: context.isToggleSidebar ? "94%" : "82%",
-        // }}
-      >
-        <div className="flex items-center gap-3">
-          {/* <Button
-          className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700"
-          onClick={toggleNav}
+    <div className="flex z-[100] px-4 py-2 justify-between shadow-md dark:shadow-slate-800 bg-white dark:!bg-[#171717] transition-all duration-300">
+      <div className="flex items-center gap-3">
+        <SearchBox placeholder="Search here..." width="350px" />
+      </div>
+
+      <div className="flex items-center gap-3">
+        <Button
+          className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700 transition-all duration-300"
+          onClick={changeTheme}
         >
-          <HiMenuAlt2 size={30} />
-        </Button> */}
+          {context.theme === "light" ? (
+            <MdOutlineLightMode size={30} />
+          ) : (
+            <MdDarkMode size={30} />
+          )}
+        </Button>
+        <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700">
+          <FaRegBell size={20} />
+        </Button>
 
-          <SearchBox placeholder="Search here..." width="350px" />
-        </div>
-
-        <div className="flex items-center gap-3">
-          <Button
-            className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700 transition-all duration-300"
-            onClick={changeTheme}
-          >
-            {context.theme === "light" ? (
-              <MdOutlineLightMode size={30} />
-            ) : (
-              <MdDarkMode size={30} />
-            )}
+        <div className="flex items-center gap-2">
+          <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full flex items-center justify-center !bg-medium dark:!bg-gray-600 !text-white">
+            R
           </Button>
-          <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full !text-medium dark:!text-gray-200 hover:!bg-gray-200 dark:hover:!bg-gray-700">
-            <FaRegBell size={20} />
-          </Button>
-
-          <div className="flex items-center gap-2">
-            <Button className="!min-w-[40px] !w-[40px] !h-[40px] !rounded-full flex items-center justify-center !bg-medium dark:!bg-gray-600 !text-white">
-              R
-            </Button>
-          </div>
         </div>
       </div>
-   
+    </div>
   );
 };
 
