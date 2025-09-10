@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@mui/material";
 import React, { useContext } from "react";
-import { HiMenuAlt2 } from "react-icons/hi";
 import SearchBox from "../SearchBox";
 import { MdOutlineLightMode, MdDarkMode } from "react-icons/md";
 import { FaRegBell } from "react-icons/fa";

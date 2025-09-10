@@ -2,7 +2,8 @@
 import {
   profitData,
   profitTabsData,
-} from "@/_components/Dashboard/dashboard.constants";
+} from "@/Components/Dashboard/dashboard.constants";
+import { CustomTooltipProfit } from "@/Components/Tooltip/toolTip";
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";
@@ -52,7 +53,7 @@ const TotalProfit = () => {
                 <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <Tooltip />
+            <Tooltip content={CustomTooltipProfit} />
             <Area
               type="monotone"
               dataKey="uv"

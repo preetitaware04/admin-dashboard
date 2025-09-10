@@ -1,25 +1,27 @@
 "use client";
-import { salesReportData } from "@/_components/Dashboard/dashboard.constants";
+import { salesReportData } from "@/Components/Dashboard/dashboard.constants";
+import GlobalDatePicker from "@/Components/FormComponents/GlobalDatePicker";
+import { CustomTooltipSalesReport } from "@/Components/Tooltip/toolTip";
 import React from "react";
 import {
   Area,
   Tooltip,
   ResponsiveContainer,
   ComposedChart,
-  CartesianGrid,
   XAxis,
   YAxis,
   Legend,
   Bar,
-  Line,
-  Scatter,
 } from "recharts";
 
 const SalesReport = () => {
   return (
     <section>
       <div className="card dark:border-gray-700 p-5 px-5 shadow-md dark:shadow-gray-700 rounded-md flex flex-col gap-5">
-        <h2 className="text-xl font-bold">Sales Report</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="text-xl font-bold">Sales Report</h2>
+          <GlobalDatePicker/>
+        </div>
         <div className="w-full h-[400px]">
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart
@@ -41,7 +43,7 @@ const SalesReport = () => {
               </defs>
               <XAxis dataKey="name" scale="band" />
               <YAxis />
-              <Tooltip />
+              <Tooltip content={CustomTooltipSalesReport} />
               <Legend />
               <Area
                 type="monotone"

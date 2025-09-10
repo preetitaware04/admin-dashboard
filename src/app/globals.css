@@ -57,7 +57,18 @@ body {
 .dark .MuiPaper-elevation {
   background-color: #25252a !important;
 }
-.dark .MuiPaper-elevation *{
-  color:rgba(255, 255, 255, 0.8) !important;
+.dark .MuiPaper-elevation * {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
+.dark .MuiSelect-iconOutlined {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dark .MuiFormLabel-root {
+  color: #fff !important;
+}
+
+.dark .MuiSvgIcon-root {
+  color: rgba(255, 255, 255, 0.8) !important;
+}

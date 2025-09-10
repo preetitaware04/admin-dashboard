@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
-import { sidebarMenu } from "../sidebar.constants";
+import { sidebarMenu } from "./sidebar.constants";
 import { Button } from "@mui/material";
 import { FaAngleDown } from "react-icons/fa6";
 import { Collapse } from "react-collapse";

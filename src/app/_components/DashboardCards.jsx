@@ -1,6 +1,6 @@
 "use client";
-import { cardsData } from "@/_components/Dashboard/dashboard.constants";
-import DashboardCard from "@/_components/Dashboard/DashboardCard";
+import { cardsData } from "@/Components/Dashboard/dashboard.constants";
+import DashboardCard from "@/Components/Dashboard/DashboardCard";
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
